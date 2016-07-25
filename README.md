@@ -31,15 +31,19 @@ api.resume();
 ```
 
 ### Example For Changing Durtation Between Specific Steps
-```javascript
-var api = impress();
-api.init();
-
-document.addEventListener('impress:stepenter', function(event) {
-    if (event.target.id === 'step-2') {
-        api.pause().next(function() {
-            api.goto('step-3', 500);
-            api.resume();
-          });
-}, false);
+```html
+<script src="js/impress.js"></script>
+<script src="js/impause.js"></script>
+<script>
+    var api = impress();
+    api.init();
+    
+    document.addEventListener('impress:stepenter', function(event) {
+        if (event.target.id === 'step-2') {
+            api.pause().next(function() {
+                api.goto('step-3', 500);
+                api.resume();
+              });
+    }, false);
+</script>
 ```
