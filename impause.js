@@ -6,7 +6,7 @@ document.addEventListener('impress:init', function(event) {
 	
 	// Disables keyboard navigation
 	//
-	// New functions can be assigned to the next a previous keys while paused
+	// New functions can be assigned to the next and previous keys while paused
 	//
 	// EXAMPLE: just disable navigation
 	//     impress().pause();
@@ -39,9 +39,8 @@ document.addEventListener('impress:init', function(event) {
 	api.paused = false;
 	api.resume = resume;
 	
-	// Replaces prev API function with one that runs that checks
-	// if the presentation is paused. If it it, it will run the pause
-	// previous function instead.
+	// Replaces prev API function with one that checksif the presentation is
+	// paused. If it is, it will run the pause prev function instead.
 	var originalPrev = api.prev;
 	api.prev = function() {
 		if (api.paused) {
