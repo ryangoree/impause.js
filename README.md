@@ -43,7 +43,8 @@ api.resume();
             api.pause().next(function() {
                 api.goto('step-3', 500);
                 api.resume();
-              });
+            });
+        }
     }, false);
 </script>
 ```
